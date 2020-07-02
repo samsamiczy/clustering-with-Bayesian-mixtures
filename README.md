@@ -21,19 +21,22 @@ calculated so that higher value of a given feature indicated higher risk of mali
 
 As noted in [1], a sample (image) is classified as malignant if any of the cells is malignant. Therefore we should put an emphasis on 'worst' values, if these values are very high for a given sample, it's probable that the sample is malignant. 
 
-Let's see an overview of all worst features.
+Due to the nature of computing features, some of them are highly correlated, let's see which ones!
 
-#### Pairplots for extreme values.
+#### Correlations for extreme values.
+![worst_col](https://user-images.githubusercontent.com/57573839/86380986-11025e80-bc8d-11ea-818b-232806323051.JPG)
+
+Now we can see pairplot of extreme values and compare it to the one from means, let's see which one is more predictable.
+
+#### Pairplots for extreme values and means.
 ![worst_pairplot](https://user-images.githubusercontent.com/57573839/86376096-ced61e80-bc86-11ea-9c22-da3b21254c41.jpg)
+![mean_pairplot](https://user-images.githubusercontent.com/57573839/86381219-5a52ae00-bc8d-11ea-9fbd-bd24db331ce0.jpg)
 
-As we can see, only a couple of features clearly indicate some difference for diffferent levels of class variable diagnosis. These features are describing area, radius and concavity of a cell.
+As we can see, only a couple of features clearly indicate some difference for diffferent levels of class variable diagnosis. These features are describing area, perimeter,radius and concavity of cells. Moreover, now we can see that extreme values provide more insights as distributions are different for benign/malignant cases.
 
 #### Box and swarm plots for extreme values.
 ![box_m](https://user-images.githubusercontent.com/57573839/86377756-047c0700-bc89-11ea-8d31-49ca1e240903.jpg)
 ![swarm_w](https://user-images.githubusercontent.com/57573839/86377772-0a71e800-bc89-11ea-97eb-401f485f42d7.jpg)
-
-#### Correlations for extreme values.
-![correlations_worst](https://user-images.githubusercontent.com/57573839/86376466-50c64780-bc87-11ea-96a7-3749d99578ca.jpg)
 
 
 
