@@ -16,6 +16,8 @@ known in the literature as "snake" until theresearcher was satisfied with the re
 Ten features were then calculated for each cell in the image. Then standard error, mean and worst (mean of three highest values in the image) were calculated. The features were
 calculated so that higher value of a given feature indicated higher risk of malignant cell. 
 
+![correlations_means (2)](https://user-images.githubusercontent.com/57573839/86353487-970bae80-bc67-11ea-860d-5f2527510ccc.jpg)
+
 
 
 ### References
