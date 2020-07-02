@@ -19,14 +19,6 @@ calculated so that higher value of a given feature indicated higher risk of mali
 #### Examples of contours for calculating symmetry of cell and concavity.
 ![cellss](https://user-images.githubusercontent.com/57573839/86353709-f964af00-bc67-11ea-9ba6-edbd80140429.jpg)
 
-As noted in [1], a sample (image) is classified as malignant if any of the cells is malignant. Therefore we should put an emphasis on 'worst' values, if these values are very high for a given sample, it's probable that the sample is malignant. 
-
-#### Examples of contours for calculating symmetry of cell and concavity.
-
-
-![correlations_means (2)](https://user-images.githubusercontent.com/57573839/86353487-970bae80-bc67-11ea-860d-5f2527510ccc.jpg)
-
-
 
 ### References
 
