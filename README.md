@@ -19,6 +19,23 @@ calculated so that higher value of a given feature indicated higher risk of mali
 #### Examples of contours for calculating symmetry of cell and concavity.
 ![cellss](https://user-images.githubusercontent.com/57573839/86353709-f964af00-bc67-11ea-9ba6-edbd80140429.jpg)
 
+As noted in [1], a sample (image) is classified as malignant if any of the cells is malignant. Therefore we should put an emphasis on 'worst' values, if these values are very high for a given sample, it's probable that the sample is malignant. 
+
+Let's see an overview of all worst features.
+
+#### Pairplots for extreme values.
+![worst_pairplot](https://user-images.githubusercontent.com/57573839/86376096-ced61e80-bc86-11ea-9c22-da3b21254c41.jpg)
+
+As we can see, only a couple of features clearly indicate some difference for diffferent levels of class variable diagnosis. These features are describing area, radius and concavity of a cell.
+
+#### Box and swarm plots for extreme values.
+![box_m](https://user-images.githubusercontent.com/57573839/86377756-047c0700-bc89-11ea-8d31-49ca1e240903.jpg)
+![swarm_w](https://user-images.githubusercontent.com/57573839/86377772-0a71e800-bc89-11ea-97eb-401f485f42d7.jpg)
+
+#### Correlations for extreme values.
+![correlations_worst](https://user-images.githubusercontent.com/57573839/86376466-50c64780-bc87-11ea-96a7-3749d99578ca.jpg)
+
+
 
 ### References
 
