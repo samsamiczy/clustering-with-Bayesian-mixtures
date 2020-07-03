@@ -3,7 +3,9 @@
  This project was a part of my undegraduate dissertation. I have looked at applications of Bayesian Mixture Models to probablistic clustering of breast tumours.
  I have also learnt theory behind Markov Chain Monte Carlo methods and Gibbs sampler in particular. 
  
- I have used Python (seaborn) for Exploratory Data Analysis (EDA) and visualization. The data then was imported into R where I have used a package for Bayesian statistics (mixAK) to perform cluster analysis.
+ I have used Python (seaborn) for Exploratory Data Analysis (EDA) and visualization. The data then was imported into R where I have used a package for Bayesian statistics (mixAK [3]) to perform cluster analysis.
+ 
+ The data set comes from UCI Machine Learning repository [2]. 
  
 ## EDA
 
@@ -43,19 +45,36 @@ These features are describing area, perimeter, radius and concavity of cells. Mo
 Let's see some tools to visualize all extreme values at once.
 
  A popular technique for visualization high-dimensional data is Principal Component Analysis or PCA, described in 30s by Karl Pearson, it finds new axis that maximize variance.
-### Visualization with PCA.
+ Here is the PCA applied to 'worst' features with labels for two labels of diagnosis.
+ 
+#### Visualization with PCA.
+![pca_diag](https://user-images.githubusercontent.com/57573839/86445695-1c986880-bd13-11ea-8d01-4f15ffd86853.png)
 
+We see similar trend, maybe clustering behaviour is not very much visible, but one class is more densly placed then the other.
+Let's now use R package mixAK to see how Bayesian Mixture Model performs on this data set. I will use a few number of components (here fixed) to see if maybe come other clusters are formed.
 
+#### Results of BMM cluster analysis. 
+![plot1](https://user-images.githubusercontent.com/57573839/86454331-5f603d80-bd1f-11ea-987d-43d40cd48aef.png)
+![plot2](https://user-images.githubusercontent.com/57573839/86454340-5ff8d400-bd1f-11ea-8b36-7a9cacb0a4d1.png)
+![plot3](https://user-images.githubusercontent.com/57573839/86454341-60916a80-bd1f-11ea-8b81-62083123a1b8.png)
 
-One of the techniques that has been very useful for such problem is t-Stochastic Neighbour Embedding or t-SNE.
+For K = 2 components, the two clusters are very much the same as in previous PCA plot. Hence, the model did a great job. It was trained with Gibbs sampler for I = 5000 iterations and B = 500 burn-in. Chain resulting in smaller DIC (deviance information criterion) was chosen and plotted. Different values of delta were used (hyperparameter on Dirichlet prior). Generally, the model shows 2-3 visible clusters. 
+
+Another technique that has proven to be very useful for visualizing such problem is t-Stochastic Neighbour Embedding or t-SNE.
 
 ### Visualization with t-SNE.
 ![t-sne](https://user-images.githubusercontent.com/57573839/86388045-5e35fe80-bc94-11ea-8cb5-547dc3300f6b.jpg)
 
+As we can see, t-SNE visualized the data set clearly marking two clusters for class variable diagnosis.
 
 ### References
 
 [1] Street, W. N., Wolberg, W. H., and Mangasarian, O. L. Nuclear feature extraction forbreast tumor diagnosis. InBiomedical 
 image processing and biomedical visualization(1993), vol. 1905, International Society for Optics and Photonics, pp. 861–870.
 
+[2] Dua, D., and Graff, C. UCI Machine Learning Repository.http://archive.ics.uci.edu/ml, 2017.
+
+[3] Based, L. M. M. I. M., Komárek, C. A. A., and Komárek, M. A. Package ‘mixak’
+
+### Thanks for your attention! :)
 
