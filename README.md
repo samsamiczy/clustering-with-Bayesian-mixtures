@@ -11,6 +11,8 @@
 
  The graphical model used comes from [reference] and is priors are illustrated as:
  
+ ![graphicalmodel-](https://user-images.githubusercontent.com/57573839/98443181-a1502480-2101-11eb-8ea4-85f3248be926.JPG)
+ 
  THe joint distribution of all variables under the model is:
  
  We calculate the posterior using Bayes formula, but we can't sample from the posterior directly as this requires solving a multidimensional integral. This is were Markov Chain Monte Carlo methods come in.
