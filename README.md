@@ -9,7 +9,7 @@
  
 ## Bayesian Mixture Models
 
- The graphical model used comes from [reference] and is priors are illustrated as:
+ The graphical model used for cluster analysis:
  
  ![graphicalmodel-](https://user-images.githubusercontent.com/57573839/98443181-a1502480-2101-11eb-8ea4-85f3248be926.JPG)
  
@@ -17,13 +17,20 @@
  
  ![samplings](https://user-images.githubusercontent.com/57573839/98443212-dd838500-2101-11eb-8a6a-b6645dc3eda3.JPG)
  
- We calculate the posterior using Bayes formula, 
+ Using Bayes formula, we can calculate unormalized posterior as a product of priors and likelihood:
  
  ![posterior](https://user-images.githubusercontent.com/57573839/98443193-be84f300-2101-11eb-90c4-83296e92e25e.JPG)
 
  but we can't sample from the posterior directly as this requires solving a multidimensional integral. This is were Markov Chain Monte Carlo methods come in.
 
+ The idea is that we set up a Markov Chain that has a stationary distribution matching the posterior. The chain accepts new states with some probability that is calculated with unormalized posterior. We don't know the true posterior, but we know it up to the normalization constant so we can check how probable each state is. As a result, the algorithm draws much more samples from regions of high probability. There are many methods to construct more effective chains, for example burn-in period or thinning. We also want to run a couple of runs with different starting points, because we face a problem of local minima (similar to other optimization methods such as Stochastic Gradient Descent). The most general algorithm for MCMC is Metropolis-Hastings:
  
+ ![mh](https://user-images.githubusercontent.com/57573839/98443511-9b5b4300-2103-11eb-8ecf-c37832fdb48c.JPG)
+ 
+Gibbs sampler can be seen as a special case of MH where we draw from a distribution of one variable conditioned on the others:
+
+![gs](https://user-images.githubusercontent.com/57573839/98443546-d1002c00-2103-11eb-8189-77bd3d3ccf30.JPG)
+
 ## EDA
 
 FNA biopsy technique uses a very thin needle to remove a sample of cells from an area in the body (a tumor in this case) to further investigate with a microscope. 
