@@ -13,9 +13,16 @@
  
  ![graphicalmodel-](https://user-images.githubusercontent.com/57573839/98443181-a1502480-2101-11eb-8ea4-85f3248be926.JPG)
  
- THe joint distribution of all variables under the model is:
+ Model is represented by the sampling:
  
- We calculate the posterior using Bayes formula, but we can't sample from the posterior directly as this requires solving a multidimensional integral. This is were Markov Chain Monte Carlo methods come in.
+ ![samplings](https://user-images.githubusercontent.com/57573839/98443212-dd838500-2101-11eb-8a6a-b6645dc3eda3.JPG)
+ 
+ We calculate the posterior using Bayes formula, 
+ 
+ ![posterior](https://user-images.githubusercontent.com/57573839/98443193-be84f300-2101-11eb-90c4-83296e92e25e.JPG)
+
+ but we can't sample from the posterior directly as this requires solving a multidimensional integral. This is were Markov Chain Monte Carlo methods come in.
+
  
 ## EDA
 
@@ -23,6 +30,8 @@ FNA biopsy technique uses a very thin needle to remove a sample of cells from an
 The data comes from digitalized images taken from a camera attached to the microscope. An 8-bit-per-pixel grey scale image was used for image analysis. Firstly,
 a researcher defined boundaries of a cell nuclei by hand (using computer mouse), such approximations of boundaries were then corrected by an active contour model
 known in the literature as "snake" until theresearcher was satisfied with the result (see [1] for more details of the process).
+
+![cellts](https://user-images.githubusercontent.com/57573839/98443225-f2f8af00-2101-11eb-9394-a80dedeaf2a5.JPG)
 
 Ten features were then calculated for each cell in the image. Then standard error, mean and worst (mean of three highest values in the image) were calculated. The features were
 calculated so that higher value of a given feature indicated higher risk of malignant cell. 
