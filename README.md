@@ -7,6 +7,14 @@
  
  The data set comes from UCI Machine Learning repository [2]. 
  
+## Bayesian Mixture Models
+
+ The graphical model used comes from [reference] and is priors are illustrated as:
+ 
+ THe joint distribution of all variables under the model is:
+ 
+ We calculate the posterior using Bayes formula, but we can't sample from the posterior directly as this requires solving a multidimensional integral. This is were Markov Chain Monte Carlo methods come in.
+ 
 ## EDA
 
 FNA biopsy technique uses a very thin needle to remove a sample of cells from an area in the body (a tumor in this case) to further investigate with a microscope. 
