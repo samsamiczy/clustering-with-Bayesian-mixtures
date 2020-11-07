@@ -1,4 +1,4 @@
-# Bayesian Mixture Models for cluster analysis of breast tumours
+# Bayesian Mixture Models for probabilistic clustering
 
  This is a part of my undegraduate dissertation submitted at University of Southampton. 
  
@@ -21,7 +21,9 @@
  
  ![posterior](https://user-images.githubusercontent.com/57573839/98443193-be84f300-2101-11eb-90c4-83296e92e25e.JPG)
 
-However, we can't calculate normalization constant analytically as it is a multidimensional integral. Since we know posterior up to the constant, we can judge whether a given paramter is probable or not. This is where MCMC methods come in. The idea behind the algorithm is to set up a Markov Chain which has a unique stationary distribution matching our posterior. We do this by setting up a condition that results in the chain taking more steps in regions of high probability. There are many MCMC, I focused on Metropolis-Hastings and Gibbs Sampler - which can be seen as a special case of MH and was finally used for estimation in this project. 
+## Markov Chain Monte Carlo methods
+
+We can't calculate normalization constant analytically as it is a multidimensional integral (over all parameters of the model). Since we know posterior up to the constant, we can judge whether a given paramter is probable or not. This is where MCMC methods come in. The idea behind the algorithm is to set up a Markov Chain which has a unique stationary distribution matching our posterior. We do this by setting up a condition that results in the chain taking more steps in regions of high probability. There are many MCMC, I focused on Metropolis-Hastings and Gibbs Sampler - which can be seen as a special case of MH and was finally used for estimation in this project. 
 
  ![mh](https://user-images.githubusercontent.com/57573839/98443511-9b5b4300-2103-11eb-8ecf-c37832fdb48c.JPG)
 
